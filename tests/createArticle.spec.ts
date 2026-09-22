@@ -55,8 +55,7 @@ test(
     'Display empty state when article feed returns no results',
     { tag: ['@regression', '@articles', '@negative'] },
     async ({ page }) => {
-
-      // Intercept article feed API
+    
       await page.route('**/api/articles**', async route => {
         await route.fulfill({
           status: 200,
